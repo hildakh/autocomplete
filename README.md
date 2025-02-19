@@ -28,5 +28,4 @@ Access at [localhost:3000](http://localhost:3000)
 ```yarn build```
 
 ## Testing
-<!-- To be added -->
 ```yarn test```

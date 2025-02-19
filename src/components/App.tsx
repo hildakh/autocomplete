@@ -4,7 +4,7 @@ import { AutocompleteContainer } from './autocomplete-container/AutocompleteCont
 function App() {
   return (
     <div className='App'>
-        <AutocompleteContainer />
+      <AutocompleteContainer />
     </div>
   );
 }
