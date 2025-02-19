@@ -1,27 +1,11 @@
 import { render, fireEvent, waitFor, screen, act } from '@testing-library/react';
 import { AutocompleteContainer } from './AutocompleteContainer';
-import { DebouncedFunction } from '../../helpers/types';
-
-const mockSuggestions = [
-  { word: 'test', score: 1 },
-  { word: 'testing', score: 2 }
-];
-
-const mockOptions = [
-  {
-    id: 'test-1',
-    label: 'test'
-  },
-  {
-    id: 'testing-2',
-    label: 'testing'
-  }
-]
+import { mockSuggestions, mockOptions } from '../../helpers/mockData';
 
 jest.mock('../../helpers/debounce', () => ({
-  debounce: (fn: DebouncedFunction) => {
+  debounce: (fn: (...args: any[]) => void) => {
     let timeoutId: NodeJS.Timeout;
-    const debouncedFn = (...args: any) => {
+    const debouncedFn = (...args: any[]) => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => fn(...args), 300);
     };

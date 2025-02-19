@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Suggestion, Option, DebouncedFunction } from '../../helpers/types';
 import { debounce } from '../../helpers/debounce';
-import { Autocomplete } from './Autocomplete';
 import { sanitizeInput } from '../../helpers/sanitizeInput';
+import { Autocomplete } from '../autcomplete/Autocomplete';
 
 export const AutocompleteContainer: React.FC = () => {
   const [query, setQuery] = useState<string>('');

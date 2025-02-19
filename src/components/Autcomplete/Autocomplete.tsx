@@ -1,6 +1,6 @@
 import React, { } from 'react';
 import { Option } from '../../helpers/types';
-import { SuggestionItem } from '../SuggestionItem/SuggestionItem';
+import { SuggestionItem } from '../suggestionItem/SuggestionItem';
 import './Autocomplete.scss'
 
 interface Props {

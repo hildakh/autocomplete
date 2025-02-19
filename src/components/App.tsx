@@ -1,5 +1,5 @@
 
-import { AutocompleteContainer } from './Autcomplete/AutocompleteContainer';
+import { AutocompleteContainer } from './autocomplete-container/AutocompleteContainer';
 
 function App() {
   return (
