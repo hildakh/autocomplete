@@ -28,10 +28,16 @@
     margin: 0;
     background: black;
     color: yellow;
+    border-radius: 10px;
   }
 
   &__suggestion {
     padding: 8px;
     cursor: pointer;
   }
+}
+
+.highlight {
+  font-weight: bold;
+  text-decoration: underline;
 }

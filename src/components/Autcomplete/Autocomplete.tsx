@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Suggestion } from '../../heplers/types';
 import './Autocomplete.styles.scss'
 import { mockData } from '../../heplers/mockData';
+import { findMatches } from '../../heplers/findMatches';
 
 const Autocomplete: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -15,10 +16,7 @@ const Autocomplete: React.FC = () => {
   const findSuggestions = useCallback(() => {
 
     if (query.length > 0) {
-      const matchingItems = mockData.filter((item: Suggestion) => {
-        const lowerCasedItemText = item.word.toLowerCase();
-        return lowerCasedItemText.includes(query.toLowerCase());
-      });
+      const matchingItems = findMatches(query, mockData);
 
       setSuggestions(matchingItems)
     } else {
@@ -35,6 +33,16 @@ const Autocomplete: React.FC = () => {
   //   // to handle selecting suggestions
   // }
 
+  const displaySuggestions = (text: string) => {
+    const textParts = text.split(new RegExp(`(${query})`, 'gi'));
+    console.log('parts', textParts)
+    return textParts.map((part, index) => (
+      <span key={`${part}-${index}`} className={part.toLowerCase() === query.toLowerCase() ? 'highlight' : ''}>
+        {part}
+      </span>
+    ))
+  }
+
   return (
     <div className="autocomplete">
       <div className="autocomplete__wrapper">
@@ -50,7 +58,9 @@ const Autocomplete: React.FC = () => {
           {
             suggestions.map((item: Suggestion) => (
               <li className='autocomplete__suggestion'>
-                {item.word}
+                {
+                  displaySuggestions(item.word)
+                }
               </li>
             ))
           }
