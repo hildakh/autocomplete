@@ -1,0 +1,65 @@
+.autocomplete {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__clear-button {
+    background-color: white;
+    border-color: white;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__input-group {
+    display: flex;
+    position: relative;
+    width: 70vw;
+  }
+
+  &__input {
+    background: white;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    height: 30px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  &__suggestions {
+    background: black;
+    border-radius: 10px;
+    color: yellow;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    position: absolute;
+    width: 100%;
+    min-height: 40px; // Minimum height for loader
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  &__error {
+    color: red;
+    position: absolute;
+    // To avoid pushing down input
+    bottom: 60px;
+  }
+
+  &__loader {
+    color: white;
+    position: absolute;
+    padding: 10px;
+  }
+}

@@ -1,10 +1,10 @@
 
-import Autocomplete from './Autcomplete/Autocomplete';
+import { AutocompleteContainer } from './Autcomplete/AutocompleteContainer';
 
 function App() {
   return (
-    <div className="App">
-        <Autocomplete />
+    <div className='App'>
+        <AutocompleteContainer />
     </div>
   );
 }
