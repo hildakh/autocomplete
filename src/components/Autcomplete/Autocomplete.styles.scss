@@ -1,0 +1,37 @@
+.autocomplete {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+  justify-content: center;
+
+  &__wrapper {
+    position: relative;
+    font-family: Arial, sans-serif;
+  }
+
+  &__input {
+    width: 300px;
+    height: 30px;
+    padding: 8px;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+  }
+
+  &__suggestions {
+    position: absolute;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: black;
+    color: yellow;
+  }
+
+  &__suggestion {
+    padding: 8px;
+    cursor: pointer;
+  }
+}
