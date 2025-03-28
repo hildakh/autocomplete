@@ -1,14 +1,14 @@
-export const debounce = (callback: (...args: any[]) => void, delay: number) => {
-  let timer: NodeJS.Timeout;
+export const debounce = (callback: (arg: string) => void, delay: number) => {
+  let timer: NodeJS.Timer;
 
-  const debouncedFn = (...args: any[]) => {
+  const debouncedFunction = (arg: string) => {
     clearTimeout(timer);
-    timer = setTimeout(() => callback(...args), delay);
-  };
+    timer = setTimeout(() => callback(arg), delay);
+  }
 
-  debouncedFn.cancel = () => {
+  debouncedFunction.cancel = () => {
     clearTimeout(timer);
-  };
+  }
 
-  return debouncedFn;
+  return debouncedFunction;
 }

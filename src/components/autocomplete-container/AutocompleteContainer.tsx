@@ -42,9 +42,9 @@ export const AutocompleteContainer: React.FC = () => {
   }, [options.length]);
 
   const debouncedFetch = useMemo((): DebouncedFunction =>
-    debounce((searchQuery: string) => fetchData(searchQuery), 300),
+    debounce((item: string) => fetchData(item), 300),
     [fetchData]
-  );
+  )
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setQuery(event.target.value);

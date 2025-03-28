@@ -9,7 +9,6 @@ export interface Option {
 }
 
 export type DebouncedFunction = {
-  // Function type signature
-  (searchQuery: string): void;
+  (query: string): void;
   cancel: () => void;
 }
